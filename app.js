@@ -1,49 +1,51 @@
 'use strict'
-// use strict tells us to follow some baseline 'strict rules'
 
-// varibles = storing data as values
-
-// Comment out en masse
-// high all the text/lines
-// ctrl + K + C
-
-// declaration of the variable firstName to be equal to the value of manuch
-// let firstName = 'Manuch'; //string
-// let lastName = "Sadri"; //single or double quotes are acceptable
-// let numberOfDogs = 0; // number
-// let lovesScotch = true; //boolean
-
-//output to the console some value
-// console.log('Hello, you are ' + firstName);
-// console.log('You have ' + numberOfDogs + ' dogs, which is sad.');
-
-// === strict equals
-// == loose equals (truthy or a falsy) string '1' loosely equals numeric 1
-
-// dynamic input
-let firstName = prompt('What is your first name?')
-let time = prompt('What time is it (0-24)?');
-let message = '';
-
-//Provide on-screen greeting dependind on user's time of day input
-if(time <= 11){
-    //console.log('Good Morning');
-    message = 'Good Morning.';
-} else if(time >= 12 && time <= 18){
-    //console.log('Good Afternoon');
-    message = 'Good Afternoon.';
-} else if(time <= 24){
-    //console.log('Good Evening');
-    message = 'Good Evening.';
-} else{
-    //console.log('Invalid input');
-    message = 'Invalid Input.';
+function getGreeting(){
+    let greetingName = getFirstName();
+    let greetingTime = getTime();
+    return document.write('Hello, ' + greetingName + '. ' + greetingTime);
 }
-document.write('Hello ' + firstName + '. ' + message);
 
+function getFirstName(){
+    let firstName = prompt('What is your first name?')
+    return firstName;
+    //console.log('the value of firstName in function getFirstName is: ' + firstName);
+}
 
+function getTime(){
+    let time = prompt('What time is it (0-24)?');
+    let message = '';
+    if(time <= 11){
+        //console.log('Good Morning');
+        message = 'Good Morning.';
+    } else if(time >= 12 && time <= 18){
+       // console.log('Good Afternoon');
+        message = 'Good Afternoon.';
+    } else if(time <= 24){
+        //console.log('Good Evening');
+        message = 'Good Evening.';
+    } else{
+        //console.log('Invalid input');you
+        message = 'Invalid Input.';
+    }
+    return message;
+}
 
-console.log('done with program');
+function getImage1(){
+    let imageChoice = prompt('Pick a cookie: 1 or 2');
+    let imageSrc = '';
+    if(imageChoice == 1){
+        imageSrc = '<li><img class="subImage" alt="chocolate chip cookies" src="./images/chocochip.jpg"></li>';
+        //console.log('imageChoice = ' + imageChoice + ' and imageSrc = ' + imageSrc);
+    }
+    else if(imageChoice== 2){
+        imageSrc = '<li><img class="subImage" alt="oatmeal cookies" src="./images/oatmeal.jpg"></li>';
 
+    }
+    else{
+        imageSrc = '<li><img class="subImage" alt="cookie image 1" src="https://via.placeholder.com/300x150.png?text=Cookie+Pic+1"></li>';
+    }
+    return document.write(imageSrc);
+}
 
-
+//console.log('done with program');
