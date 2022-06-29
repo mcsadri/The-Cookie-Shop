@@ -48,4 +48,17 @@ function getImage1(){
     return document.write(imageSrc);
 }
 
-//console.log('done with program');
+// for loop example
+function getCookieStars(){
+    // 1. variable declaration & assignment
+    // 2. condition that needs to be met
+    // 3. what do we do with the variable once an iteration has completed
+    let userStars = prompt('How many stars would you rate our cookie shop? (1 -5)');
+    let printStars = '';
+    for(let x = 0; x < userStars; x++){
+        printStars = printStars + '<img class="star" alt="cookie star" src="./images/cookiestar.jpg">'
+        // console.log(x);
+        // console.log(output);
+    }
+    return document.write(printStars);
+}
